@@ -1,12 +1,21 @@
 import { createStore } from 'vuex'
 
+import coachesModule from './modules/coaches/index'
+import requestsModule from './modules/requests/index'
+
 export default createStore({
-  state: {
+  state(){
+    return{
+      userId: 'c3'
+    }
   },
-  mutations: {
-  },
-  actions: {
+  getters:{
+    userId(state){
+      return state.userId
+    }
   },
   modules: {
+    coaches: coachesModule,
+    requests: requestsModule
   }
 })
